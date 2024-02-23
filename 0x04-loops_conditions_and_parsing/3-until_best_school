@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This bash script prints the string
+# "Best School" using the until loop
+
+index=1
+until [ $index -eq 10 ]; do
+	echo "Best School"
+	((index++))
+done
+
