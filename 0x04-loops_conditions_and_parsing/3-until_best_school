@@ -2,7 +2,7 @@
 # This bash script prints the string
 # "Best School" using the until loop
 
-index=1
+index=0
 until [ $index -eq 10 ]; do
 	echo "Best School"
 	((index++))
