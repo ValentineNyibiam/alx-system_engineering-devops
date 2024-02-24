@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This is a bash script that print numbers
+
+index=1
+while [ $index -lt 21 ]; do
+	if [ $index -eq 4 ]; then
+		echo $index
+		echo "bad luck from China"
+	elif [ $index -eq 9 ]; then
+		echo $index
+		echo "bad luck from Japan"
+	elif [ $index -eq 17 ]; then
+		echo $index
+		echo "bad luck from Italy"
+	else
+		echo $index
+	fi
+	((index++))
+done
+
