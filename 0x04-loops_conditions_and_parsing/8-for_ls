@@ -2,17 +2,9 @@
 # This is a bash script that lists
 # files in the current directory
 
-files=(*)
-IFS='-'
-array_len=${#files[@]}
+files=$(ls)
 
-for ((index=0; index<=array_len; index++)); do
-	read -ra part <<< "${files[$index]}"
-	sub_array_len=${#part[@]}
-	if [ "$sub_array_len" -eq 2 ]; then
-		echo "${part[1]}"
-	else
-		echo "${part[0]}"
-	fi
+for i in $files; do
+	echo "$i" | cut -d '-' -f2
 done
 
