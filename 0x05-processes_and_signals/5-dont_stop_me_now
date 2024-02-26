@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This is a bash script that kills a process
+
+# Specify the process name
+process_name="4-to_infinity_and_beyond"
+
+# Use pgrep to get the pid of the process of the process to be killed
+process_to_kill=$(pgrep -f "$process_name")
+
+# Kill the process
+kill "$process_to_kill"
+
