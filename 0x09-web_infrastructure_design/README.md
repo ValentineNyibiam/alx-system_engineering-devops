@@ -28,3 +28,8 @@ built with the sysadmin/devops track projects
   - **Duration:** 4 days.
   - **Month** 5, **Week** 4.
 
+# Further explanations on tasks #
+  For each task further explanations were required on certain points
+  so i elaborated on them and you can access them below for further
+  clarification on the concept of the project.
+  - [Further explanations](https://docs.google.com/document/d/1lrEV5nmI4qc0RmzJ40qTuepaw999US2aACh_mg_ZvNo/edit#heading=h.km6qqijd909f)
