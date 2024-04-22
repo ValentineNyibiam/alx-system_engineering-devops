@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# sets up an SSH configuration file for the local SSH client
+
+PasswordAuthentication no
