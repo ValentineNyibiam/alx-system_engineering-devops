@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
 # sets up an SSH configuration file for the local SSH client
+# to connect to a server without typing a password
 
-PasswordAuthentication no
+Host *
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/school
