@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# this is a bash script that;
+# - install nginx
+# - configures nginx to return "hello world!"
+
+# install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# enable firewall on server
+sudo ufw enable
+# configure firewall to allow port 80
+sudo ufw allow 'Nginx  HTTP'
+
+# configure default return page
+sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
