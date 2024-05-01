@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# this is a bash script that;
+# - install nginx
+# - configure nginx to return "hello world!"
+# - configure nginx to have a /redirect_me page
+# - configures the 404 not found page
+
+# install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# enable firewall on server
+#sudo ufw enable
+# configure firewall to allow port 80
+#sudo ufw allow 'Nginx  HTTP'
+
+# configure default return page
+sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
+
+# configure nginx server /redirect_me page
+replacement_string="server_name _;\n\n\trewrite \^\/redirect_me https\:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
+search_pattern="server_name _;"
+
+sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/default
+
+# configure the 404 not found page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+replacement_string="server_name _;\n\n\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
+search_pattern="search_name _;"
+
+sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/default
+
+# restart nginx server
+sudo service nginx restart
