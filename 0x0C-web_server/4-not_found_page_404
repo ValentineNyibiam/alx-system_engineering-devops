@@ -27,7 +27,7 @@ sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/d
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
 replacement_string="server_name _;\n\n\terror_page 404 \/404.html;\n\tlocation = \/404.html \{\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t\}"
-search_pattern="search_name _;"
+search_pattern="server_name _;"
 
 sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/default
 
