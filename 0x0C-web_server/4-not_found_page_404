@@ -26,8 +26,8 @@ sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/d
 # configure the 404 not found page
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
-replacement_string="server_name _;\n\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
-search_pattern="server_name _;"
+replacement_string="listen 80 default_server;\n\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+search_pattern="listen 80 default_server;"
 
 sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/default
 
