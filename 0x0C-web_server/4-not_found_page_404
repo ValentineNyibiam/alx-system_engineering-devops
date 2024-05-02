@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+0x0C-web_server#!/usr/bin/env bash
 # this is a bash script that;
 # - install nginx
 # - configure nginx to return "hello world!"
@@ -15,7 +15,7 @@ sudo apt-get -y install nginx
 #sudo ufw allow 'Nginx  HTTP'
 
 # configure default return page
-sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # configure nginx server /redirect_me page
 replacement_string="server_name _;\n\n\trewrite \^\/redirect_me https\:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
