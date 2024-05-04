@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# this is a script that congures nginx so that its HTTP response
+# contains a custom header  (on web-01 and web-02)
+
+sudo sed -i "s/server_name _;/server_name _;\n\tadd_header X-Served-By \$hostname;/" /etc/nginx/sites-enabled/default
