@@ -1,7 +1,39 @@
 #!/usr/bin/env bash
-# this is a script that congures nginx so that its HTTP response
-# contains a custom header  (on web-01 and web-02)
+# this is a bash script that;
+# - install nginx
+# - configure nginx to return "hello world!"
+# - configure nginx to have a /redirect_me page
+# - configures the 404 not found page
+# - configures nginx so that its HTTP response contains,
+#    a custom header  (on web-01 and web-02)
 
+# install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# enable firewall on server
+#sudo ufw enable
+# configure firewall to allow port 80
+sudo ufw allow 'Nginx  HTTP'
+
+# configure default return page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# configure nginx server /redirect_me page
+replacement_string="server_name _;\n\n\trewrite \^\/redirect_me https\:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
+search_pattern="server_name _;"
+
+sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/default
+
+# configure the 404 not found page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+replacement_string="server_name _;\n\terror_page 404 \/404.html;"
+search_pattern="server_name _;"
+
+sudo sed -i "s/$search_pattern/$replacement_string/g" /etc/nginx/sites-enabled/default
+
+# add custom http headers
 sudo sed -i "s/server_name _;/server_name _;\n\tadd_header X-Served-By \$hostname;/" /etc/nginx/sites-enabled/default
 
 # restart nginx server
