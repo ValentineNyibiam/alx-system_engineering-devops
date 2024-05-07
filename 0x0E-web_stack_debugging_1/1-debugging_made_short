@@ -2,3 +2,4 @@
 # debugs my server but with shorter approach
 sudo sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 sudo service nginx restart
+pkill -o nginx
