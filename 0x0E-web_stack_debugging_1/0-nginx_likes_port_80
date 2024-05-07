@@ -8,5 +8,8 @@ sudo apt upgrade
 # install nginx
 sudo apt install nginx
 
+# update server configuration
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
 # start web server service
 sudo service nginx start
