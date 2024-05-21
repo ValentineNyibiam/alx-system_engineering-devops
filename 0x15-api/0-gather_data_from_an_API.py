@@ -30,8 +30,8 @@ if __name__ == "__main__":
             else:
                 tasks += 1
 
-    employee_name = r_users.json()['name']
-    print(f"Employee {employee_name} is done with tasks({done_tasks}/{tasks}):")
+    name = r_users.json()['name']
+    print(f"Employee {name} is done with tasks({done_tasks}/{tasks}):")
 
     for item in done_tasks_titles:
-        print(f"\t{item}", end='\n')
+        print(f"\t {item}")
