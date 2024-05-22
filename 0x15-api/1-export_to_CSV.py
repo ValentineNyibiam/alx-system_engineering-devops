@@ -34,6 +34,6 @@ if __name__ == "__main__":
             data.append(data_row)
             data_row = []
 
-    with open("USER_ID.csv", mode='w') as file:
+    with open(f"{id}.csv", mode='w') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         writer.writerows(data)
