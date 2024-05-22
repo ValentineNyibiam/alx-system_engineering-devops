@@ -33,6 +33,7 @@ if __name__ == "__main__":
                 dict_value.append(list_item)
                 list_item = {}
         main_dict.update({index: dict_value})
+        dict_value = []
         index += 1
         id += 1
 
