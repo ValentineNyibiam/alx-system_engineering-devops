@@ -2,10 +2,12 @@
 """
     this is a python script that, makes requests to a REST API
     - accepts an integer as a parameter, which is the employee ID
+    - exports the data in the csv format
 """
+import csv
 import requests
 from sys import argv
-import csv
+
 
 if __name__ == "__main__":
     if len(argv) < 2 or not argv[1].isdigit():
