@@ -10,8 +10,9 @@ def number_of_subscribers(subreddit):
     This is a function that queries the Reddit API and returns
     the number of subscribers for a given subreddit
     """
-    if subreddit is None or subreddit is not str:
+    if subreddit is None or not str:
         return 0
+    
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     cHeaders = {'user-agent': 'Chrome/42.0.2311.135'}
 
