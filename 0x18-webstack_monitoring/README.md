@@ -18,12 +18,10 @@ Server monitoring: getting data about your virtual or physical server and making
 - What are error logs for a web server (such as Nginx)
 
 ## Resources ##
-- [https://www.turnkeylinux.org/blog/friends-dont-let-friends-program-shell-script](Friends don’t let friends program in shell script)
-- [https://www.webopedia.com/definitions/api/](What is an API)
-- [https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/](What is an API? In English, please)
-- [https://www.sitepoint.com/rest-api/](What is a REST API)
-- [https://smartbear.com/learn/api-design/microservices/](What are microservices)
-- [https://peps.python.org/pep-0008/](PEP8 Python style - having a clean code respecting style guide is really appreciated in the industry)
+- [https://www.sumologic.com/glossary/server-monitoring/](What is server monitoring)
+- [https://en.wikipedia.org/wiki/Application_performance_management](What is application monitoring)
+- [https://sre.google/sre-book/monitoring-distributed-systems/](System monitoring by Google)
+- [https://docs.nginx.com/nginx/admin-guide/monitoring/logging/](Nginx logging and monitoring)
 
 ## Folder Details ###
 - **Date Created:** May 20 2024.
