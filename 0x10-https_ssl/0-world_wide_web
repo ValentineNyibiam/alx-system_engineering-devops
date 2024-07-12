@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#gets information about a domain
+
+# function handling info query and printing
+print_info(){
+    res="$(2>/dev/null awk '{print $4,$5}' < <(dig $1.$2 | grep -A1 'ANSWER SECTION:' | tail -1))"
+
+    if [ -n "$res" ]; then
+	type="$(cut -d' ' -f1 <<< "$res")"
+	ip="$(cut -d' ' -f2 <<< "$res")"
+	echo "The subdomain $1 is a $type record and points to $ip"
+    fi
+}
+
+
+if (( ! "$#" )); then
+    exit 1
+fi
+
+domain="$1"
+
+# set subdomains to query
+if [ -z "$2" ]; then
+    values="www lb-01 web-01 web-02"
+else
+    values="$2"
+fi
+
+# iterate through subdomains and print info
+read -ra subdomains <<< "$values"
+for subdomain in "${subdomains[@]}"; do
+    print_info "$subdomain" "$domain"
+done
