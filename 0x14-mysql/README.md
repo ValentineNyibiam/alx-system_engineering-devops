@@ -16,11 +16,11 @@ objectives are to understand the following:
 - [https://www.databasejournal.com/ms-sql/developing-a-sql-server-backup-strategy/](Build a robust database backup strategy)
 
 ## Folder Details ###
-- **Date Created:** May 14 2024.
+- **Date Created:** July 24, 2024.
 - **Author:** 
 	- [Valentine Nyibiam](https.//github.com/ValentineNyibiam)
 - **Project Timeline:**
-  - **Released:** May 14, 2024 - 6am.
-  - **1st Deadline:** May 16, 2024 - 6am.
-  - **Duration:** 1 days.
+  - **Released:** July 23, 2024 - 6am.
+  - **1st Deadline:** July 25, 2024 - 6am.
+  - **Duration:** 2 days.
   - **Month** 6, **Week** 2.
