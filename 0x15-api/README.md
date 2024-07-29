@@ -34,11 +34,11 @@ objectives are to understand the following:
 - [https://peps.python.org/pep-0008/](PEP8 Python style - having a clean code respecting style guide is really appreciated in the industry)
 
 ## Folder Details ###
-- **Date Created:** May 20 2024.
+- **Date Created:** July 29, 2024.
 - **Author:** 
 	- [Valentine Nyibiam](https.//github.com/ValentineNyibiam)
 - **Project Timeline:**
-  - **Released:** May 20, 2024 - 6am.
-  - **1st Deadline:** May 21, 2024 - 6am.
+  - **Released:** July 29, 2024 - 6am.
+  - **1st Deadline:** July 30, 2024 - 6am.
   - **Duration:** 1 days.
   - **Month** 6, **Week** 3.
