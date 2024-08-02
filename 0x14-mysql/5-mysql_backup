@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# This is a bash script that generates a MYSQL dump and
+# creates a compressed archive out of it
+
+# declaration of variables
+CURRENT_DATE=$(date +'%d-%m-%Y')
+DUMP_NAME="backup.sql"
+ARCHIVE_NAME="$CURRENT_DATE.tar.gz"
+USER="root"
+DB_NAME="tyrell_corp"
+
+# check for arguments
+if [ "$#" -eq 1 ]; then
+	PASSWORD="$1"
+	echo "$PASSWORD"
+else
+	echo "Usage:./5-mysql_backup password"
+fi
+
+# log into mysql servers and
+# create mysql dump of all the databases
+mysqldump -u "$USER" -p"$PASSWORD" "$DB_NAME" > "$DUMP_NAME"
+
+# create a .tar.gz archive from the dump
+tar -czvf "$ARCHIVE_NAME" "$DUMP_NAME"
+
