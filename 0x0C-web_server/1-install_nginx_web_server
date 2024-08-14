@@ -8,10 +8,10 @@ sudo apt-get update
 sudo apt-get -y install nginx
 
 # enable firewall on server
-sudo ufw enable
+#sudo ufw enable
 # configure firewall to allow port 80
-sudo ufw allow 'Nginx  HTTP'
+#sudo ufw allow 'Nginx  HTTP'
 
 # configure default return page
 sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
-sudo service nginx start
+sudo service nginx restart

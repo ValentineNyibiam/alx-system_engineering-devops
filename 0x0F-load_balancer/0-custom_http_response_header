@@ -14,7 +14,7 @@ sudo apt-get -y install nginx
 # enable firewall on server
 #sudo ufw enable
 # configure firewall to allow port 80
-sudo ufw allow 'Nginx  HTTP'
+#sudo ufw allow 'Nginx  HTTP'
 
 # configure default return page
 echo "Hello World!" | sudo tee /var/www/html/index.html

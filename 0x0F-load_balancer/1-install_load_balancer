@@ -21,8 +21,8 @@ frontend server_frontend
 
 backend server_backend
 	balance roundrobin
-	server 501932-web-01 100.26.225.54:80 check
-	server 501932-web-02 100.25.188.61:80 check"
+	server 501932-web-01 100.26.223.121:80 check
+	server 501932-web-02 100.25.34.20:80 check"
 
 echo "$myconfig" | sudo tee -a /etc/haproxy/haproxy.cfg
 
