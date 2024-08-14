@@ -18,10 +18,11 @@ def number_of_subscribers(subreddit):
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     cHeaders = {'user-agent': 'Chrome/42.0.2311.135'}
 
-    subreddits = get(url, headers=cHeaders)
-    results = subreddits.json()
+    subreddits_abt = get(url, headers=cHeaders)
+    results = subreddits_abt.json()
 
     try:
         return results.get('data').get('subscribers')
+
     except Exception:
         return 0
