@@ -1,6 +1,6 @@
 # Overview #
 
-The ** 0x15. API ** project
+The ** 0x18. Monitoring ** project
 “You cannot fix or improve what you cannot measure” is a famous saying in 
 the Tech industry. In the age of the data-ism, monitoring how our 
 Software systems are doing is an important thing. In this project, we 
@@ -24,11 +24,11 @@ Server monitoring: getting data about your virtual or physical server and making
 - [https://docs.nginx.com/nginx/admin-guide/monitoring/logging/](Nginx logging and monitoring)
 
 ## Folder Details ###
-- **Date Created:** May 20 2024.
+- **Date Created:** August 15, 2024.
 - **Author:** 
 	- [Valentine Nyibiam](https.//github.com/ValentineNyibiam)
 - **Project Timeline:**
-  - **Released:** May 20, 2024 - 6am.
-  - **1st Deadline:** May 21, 2024 - 6am.
+  - **Released:** August 15, 2024 - 6am.
+  - **1st Deadline:** August 15, 2024 - 6am.
   - **Duration:** 1 days.
   - **Month** 6, **Week** 3.
