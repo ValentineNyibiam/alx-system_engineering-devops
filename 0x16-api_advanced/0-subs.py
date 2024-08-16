@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is a module that defines a query function
+number of subscribers for a given subreddit
 """
 
 from requests import get
@@ -8,18 +8,17 @@ from requests import get
 
 def number_of_subscribers(subreddit):
     """
-    This is a function that queries the Reddit API and returns
-    the number of subscribers for a given subreddit
+    function that queries the Reddit API and returns the number of subscribers
+    (not active users, total subscribers) for a given subreddit.
     """
 
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    cHeaders = {'user-agent': 'Chrome/42.0.2311.135'}
-
-    subreddits_abt = get(url, headers=cHeaders)
-    results = subreddits_abt.json()
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    response = get(url, headers=user_agent)
+    results = response.json()
 
     try:
         return results.get('data').get('subscribers')

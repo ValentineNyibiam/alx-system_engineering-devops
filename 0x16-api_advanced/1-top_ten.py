@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 """
-This is a module that defines a query function
+prints the titles of the first 10 hot posts listed for a given subreddit
 """
 
 from requests import get
@@ -8,24 +9,25 @@ from requests import get
 
 def top_ten(subreddit):
     """
-    This is a function that queries the Reddit API and prints
-    the titles of the first 10 hot posts listed for a given subreddit
+    function that queries the Reddit API and prints the titles of the first
+    10 hot posts listed for a given subreddit
     """
+
     if subreddit is None or not isinstance(subreddit, str):
-        print(None)
-        return
+        print("None")
 
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
     params = {'limit': 10}
-    cHeader = {'user-agent': 'Chrome/42.0.2311.135', "Accept": "application/json"}
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
 
-    subreddits_abt = get(url, headers=cHeader)
+    response = get(url, headers=user_agent, params=params)
+    results = response.json()
 
-    abt_json =  subreddits_abt.json()
-#if abt_json.get('data') and abt_json.get('children'):
-    posts = abt_json["data"]["children"]
-    for post in posts:
-    	print(post["data"]["title"])
-   # try:
+    try:
+        my_data = results.get('data').get('children')
 
-#top_ten("programming")
+        for i in my_data:
+            print(i.get('data').get('title'))
+
+    except Exception:
+        print("None")
